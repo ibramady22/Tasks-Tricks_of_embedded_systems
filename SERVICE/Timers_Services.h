@@ -14,5 +14,5 @@ void Timer1_SetInterruptTime_us (u16 time,void(*LocalFptr)(void));
 
 void PWM_Measure(u32* Pfreq,u8* Pduty);
 void PWM_Measure2(u32* Pfreq,u8* Pduty);
-static void Func_ICU(void);
+ static void Func_ICU(void);
 #endif /* TIMERS_SERVICES_H_ */
