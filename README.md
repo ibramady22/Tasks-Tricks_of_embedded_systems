@@ -230,7 +230,7 @@ This project demonstrates a traffic light controller using a **stack-based state
 - **LED Blinking**: In emergency mode, the LEDs blink for 3 seconds then transate to red stete.
 
 #### System Demonstration Video:
-   ![Traffic&pedestrianCrossing](Documents/Traffic&pedestrianCrossing.mp4)
+   ![Traffic&pedestrianCrossing](Documents/traffic_pedestriancrossing.mp4)
 
 #### Code Implementation:
 - [Traffic_stack_based.c](APP/Traffic_stack_based.c)
