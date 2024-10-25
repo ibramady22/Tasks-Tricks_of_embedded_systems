@@ -16,10 +16,11 @@
 #include "Timers_Services.h"
 #include "FixedPoint_interface.h"
 #include "Event_Based_interface.h"
+#include "Traffic_stack_based.h"
 
 
-int main() {			DIO_Init();	LCD_Init();	LCD_WriteNumber(5);	/************************************************************************/	/*Enable global interrupt*/	sei();	/************************************************************************/	MultiEvents_init();
-	  while(1)	  {		  MultiEvents_process();	  }	  	return 0;
+int main() {		DIO_Init();	LCD_Init();	Traffic_Init();	LCD_WriteString("Traffic  ");				/************************************************************************/	/*Enable global interrupt*/	sei();	/************************************************************************/
+	  while(1)	  {		Traffic_Runnable();	  }	  	return 0;
 }
 
 

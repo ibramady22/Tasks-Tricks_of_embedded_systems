@@ -59,6 +59,7 @@ C_SRCS +=  \
 ../APP/Event_Based_program.c \
 ../APP/FixedPoint_program.c \
 ../APP/SINE_LUT_program.c \
+../APP/Traffic_stack_based.c \
 ../HAL/KEYPAD.c \
 ../HAL/LCD.c \
 ../HAL/MOTOR.c \
@@ -96,6 +97,7 @@ OBJS +=  \
 APP/Event_Based_program.o \
 APP/FixedPoint_program.o \
 APP/SINE_LUT_program.o \
+APP/Traffic_stack_based.o \
 HAL/KEYPAD.o \
 HAL/LCD.o \
 HAL/MOTOR.o \
@@ -126,6 +128,7 @@ OBJS_AS_ARGS +=  \
 APP/Event_Based_program.o \
 APP/FixedPoint_program.o \
 APP/SINE_LUT_program.o \
+APP/Traffic_stack_based.o \
 HAL/KEYPAD.o \
 HAL/LCD.o \
 HAL/MOTOR.o \
@@ -156,6 +159,7 @@ C_DEPS +=  \
 APP/Event_Based_program.d \
 APP/FixedPoint_program.d \
 APP/SINE_LUT_program.d \
+APP/Traffic_stack_based.d \
 HAL/KEYPAD.d \
 HAL/LCD.d \
 HAL/MOTOR.d \
@@ -186,6 +190,7 @@ C_DEPS_AS_ARGS +=  \
 APP/Event_Based_program.d \
 APP/FixedPoint_program.d \
 APP/SINE_LUT_program.d \
+APP/Traffic_stack_based.d \
 HAL/KEYPAD.d \
 HAL/LCD.d \
 HAL/MOTOR.d \
@@ -241,6 +246,13 @@ APP/FixedPoint_program.o: ../APP/FixedPoint_program.c
 	
 
 APP/SINE_LUT_program.o: ../APP/SINE_LUT_program.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -DDEBUG -DBOARD=STK600_MEGA  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../src/ASF/common/boards" -I"../src/ASF/mega/utils/preprocessor" -I"../src/ASF/mega/utils" -I"../src/ASF/common/utils" -I"../src" -I"../src/config" -I"../HAL" -I"../MCAL" -I"../SERVICE" -I"../APP" -I".."  -O1 -fdata-sections -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g3 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+APP/Traffic_stack_based.o: ../APP/Traffic_stack_based.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -DDEBUG -DBOARD=STK600_MEGA  -I"C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../src/ASF/common/boards" -I"../src/ASF/mega/utils/preprocessor" -I"../src/ASF/mega/utils" -I"../src/ASF/common/utils" -I"../src" -I"../src/config" -I"../HAL" -I"../MCAL" -I"../SERVICE" -I"../APP" -I".."  -O1 -fdata-sections -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -g3 -Wall -mmcu=atmega32 -B "C:\Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega32" -c -std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 

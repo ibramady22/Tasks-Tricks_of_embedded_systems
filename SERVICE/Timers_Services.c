@@ -55,14 +55,18 @@ void PWM_Duty(u16 duty)
 	}
 }
 /******************************************Set Interrupt Time******************************************************/
-/* maximum 65 ms**/
+
+
+/* maximum input_time range(1-2065)ms if the tick_time is 32 micro sec (CPU_freq=8 MHZ  pres=256) */
 void Timer1_SetInterruptTime_ms (u16 time,void(*LocalFptr)(void))
 {
-	Timer1_Init(TIMER1_CTC_OCRA_TOP_MODE,TIMER1_SCALER_8,OCRA_DISCONNECTED,OCRB_DISCONNECTED);
-	OCR1A=(u32)((u32)time*1000)-1;
+	Timer1_Init(TIMER1_CTC_OCRA_TOP_MODE,TIMER1_SCALER_256,OCRA_DISCONNECTED,OCRB_DISCONNECTED);
+	OCR1A=(u32)((u32)time*31)-1;
 	Timer1_OCA_SetCallBack(LocalFptr);
 	Timer1_OCA_InterruptEnable();
 }
+
+/* maximum input_time range(1-65000)us if the tick_time is 1 micro sec (CPU_freq=8 MHZ  pres=8) */
 void Timer1_SetInterruptTime_us (u16 time,void(*LocalFptr)(void))
 {
 	Timer1_Init(TIMER1_CTC_OCRA_TOP_MODE,TIMER1_SCALER_8,OCRA_DISCONNECTED,OCRB_DISCONNECTED);

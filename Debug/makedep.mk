@@ -8,6 +8,8 @@ APP\FixedPoint_program.c
 
 APP\SINE_LUT_program.c
 
+APP\Traffic_stack_based.c
+
 HAL\KEYPAD.c
 
 HAL\LCD.c

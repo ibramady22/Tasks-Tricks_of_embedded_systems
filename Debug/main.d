@@ -10,7 +10,7 @@ main.d main.o: .././main.c \
  ../HAL/KEYPAD_cfg.h ../MCAL/ADC.h ../MemMap.h ../Utils.h ../MCAL/EXINT.h \
  ../HAL/Sensors.h ../APP/SINE_LUT_interface.h ../MCAL/TIMER.h \
  ../SERVICE/Timers_Services.h ../APP/FixedPoint_interface.h \
- ../APP/Event_Based_interface.h
+ ../APP/Event_Based_interface.h ../APP/Traffic_stack_based.h
 
 c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h:
 
@@ -61,3 +61,5 @@ c:\program\ files\ (x86)\atmel\studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\
 ../APP/FixedPoint_interface.h:
 
 ../APP/Event_Based_interface.h:
+
+../APP/Traffic_stack_based.h:
